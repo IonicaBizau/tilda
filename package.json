@@ -1,0 +1,29 @@
+{
+  "name": "argvify",
+  "version": "1.0.0",
+  "description": "A tiny command line arguments parser and help generator.",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:IonicaBizau/argvify.git"
+  },
+  "keywords": [
+    "argvify",
+    "command",
+    "line",
+    "arguments",
+    "parser"
+  ],
+  "author": "Ionică Bizău <bizauionica@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IonicaBizau/argvify/issues"
+  },
+  "homepage": "https://github.com/IonicaBizau/argvify"
+}
