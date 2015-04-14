@@ -2,10 +2,10 @@
 var Clp = require("../lib");
 
 // Arguments
-var args = ["node", "foo", "--name", "hi", "-a", "13"];
+var args = ["node", "foo", "--name", "Alice", "-a", "13"];
 
 // Create a new parser
-var parser = new Clp(args);
+var parser = new Clp(args, { allow_exit: true });
 
 // Handle -h and --help
 parser.addHelpOption();
@@ -14,8 +14,8 @@ parser.addHelpOption();
 parser.addVersionOption();
 
 // Create options and add them
-var nameOption = new Clp.Option(["name", "n"], "Your name", "Alice")
-  , ageOption = new Clp.Option(["age", "a"], "Your age")
+var nameOption = new Clp.Option(["name", "n"], "Your name", "name", "Alice")
+  , ageOption = new Clp.Option(["age", "a"], "Your age", "age")
   ;
 
 parser.addOption(nameOption);
