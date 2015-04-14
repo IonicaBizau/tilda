@@ -1,0 +1,26 @@
+#!/usr/bin/env node
+
+// Dependencies
+var Clp = require("../lib");
+
+
+// Create options and add them
+var nameOption = new Clp.Option(["name", "n"], "Someone's name", "name", "Alice")
+  , ageOption = new Clp.Option(["age", "a"], "Someone's age", "age")
+  ;
+
+// Create a new parser
+var parser = new Clp({
+    name: "CLP Sample"
+  , version: "v1.0"
+}, [nameOption, ageOption]);
+
+if (isNaN(parseInt(ageOption.value)) || ageOption.value < 0) {
+    return console.error("Invalid age.");
+}
+
+if (!nameOption.value) {
+    return console.error("Invalid name.");
+}
+
+console.log(nameOption.value + " is " + ageOption.value + " year old.");
