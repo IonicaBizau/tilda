@@ -5,7 +5,7 @@ var Clp = require("../lib");
 var args = ["node", "foo", "--name", "Alice", "-a", "13"];
 
 // Create a new parser
-var parser = new Clp(args, { allow_exit: true });
+var parser = new Clp(args);
 
 // Handle -h and --help
 parser.addHelpOption();
