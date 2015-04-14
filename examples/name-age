@@ -13,6 +13,7 @@ var nameOption = new Clp.Option(["name", "n"], "Someone's name", "name", "Alice"
 var parser = new Clp({
     name: "CLP Sample"
   , version: "v1.0"
+  , process: true
 }, [nameOption, ageOption]);
 
 if (isNaN(parseInt(ageOption.value)) || ageOption.value < 0) {
