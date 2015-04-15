@@ -12,9 +12,16 @@ var nameOption = new Clp.Option(["name", "n"], "Someone's name", "name", "Alice"
 var parser = new Clp({
     name: "Name Age"
   , version: "v1.0"
-  , process: true
+  , process: false
   , exe: "name-age"
+  , examples: "name-age -a 10 --name Bob"
+  , docs_url: "https://github.com/IonicaBizau/node-clp"
+  , notes: "These are some final notes."
 }, [nameOption, ageOption]);
+
+parser.addExample("name-age -a 5 # will default the name to \"Alice\"");
+
+parser.process();
 
 
 // Validate the age
