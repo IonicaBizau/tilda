@@ -1,7 +1,7 @@
 {
-  "name": "argvify",
+  "name": "clp",
   "version": "1.0.0",
-  "description": "A tiny command line arguments parser and help generator.",
+  "description": "A tiny and fast command line arguments parser and help generator.",
   "main": "lib/index.js",
   "directories": {
     "test": "test"
@@ -11,10 +11,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:IonicaBizau/argvify.git"
+    "url": "git@github.com:IonicaBizau/node-clp.git"
   },
   "keywords": [
-    "argvify",
+    "clp",
     "command",
     "line",
     "arguments",
@@ -23,7 +23,7 @@
   "author": "Ionică Bizău <bizauionica@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IonicaBizau/argvify/issues"
+    "url": "https://github.com/IonicaBizau/node-clp/issues"
   },
-  "homepage": "https://github.com/IonicaBizau/argvify"
+  "homepage": "https://github.com/IonicaBizau/node-clp"
 }
