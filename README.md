@@ -1,7 +1,10 @@
+![](http://i.imgur.com/a9aWysM.png)
+
 # clp
 A tiny and fast command line arguments parser and help generator.
 
 ## Installation
+
 ```sh
 $ npm i clp
 ```
@@ -80,6 +83,10 @@ var parser = new CLP(args, options, clpOptions); // pass everything
  - `exe` (String): The executable name (default: `"no-name"`).
  - `version` (String): The application version (default: `"No Version"`).
  - `process` (Boolean): A flag to process the CLP options imediatelly (default: `false`).
+ - `docs_url` (String): The documentation url (default: `""`).
+ - `notes` (String): Final notes placed between examples and documentation
+   url in help content (default: `""`).
+ - `examples` (String|Array): A string or an array of string containing examples.
 
 - **Array** `clpOptions`:
 
@@ -145,7 +152,6 @@ Returns the version information.
 
 
 ## How to contribute
-
 1. File an issue in the repository, using the bug tracker, describing the
    contribution you'd like to make. This will help us to get you started on the
    right foot.
