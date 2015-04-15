@@ -4,7 +4,7 @@
 A tiny and fast command line arguments parser and help generator.
 
 ## Why yet another arguments parser?
-Because I haven't found yet such a nice one. :smile:
+Because I haven't found such a nice one yet. :smile:
 
 Well, I liked the [Qt command line parser](http://doc.qt.io/qt-5/qcommandlineparser.html), and I wanted to create an equivalent written in NodeJS. The code looks better and more organized in this style. Also, with *clp* you can easily generate and display help content and version information.
 
