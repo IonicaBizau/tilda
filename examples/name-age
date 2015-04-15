@@ -3,7 +3,6 @@
 // Dependencies
 var Clp = require("../lib");
 
-
 // Create options and add them
 var nameOption = new Clp.Option(["name", "n"], "Someone's name", "name", "Alice")
   , ageOption = new Clp.Option(["age", "a"], "Someone's age", "age")
@@ -17,12 +16,16 @@ var parser = new Clp({
   , exe: "name-age"
 }, [nameOption, ageOption]);
 
+
+// Validate the age
 if (isNaN(parseInt(ageOption.value)) || ageOption.value < 0) {
     return console.error("Invalid age.");
 }
 
+// Validate the name
 if (!nameOption.value) {
     return console.error("Invalid name.");
 }
 
+// Use the values
 console.log(nameOption.value + " is " + ageOption.value + " year old.");
