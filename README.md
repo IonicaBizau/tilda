@@ -3,10 +3,94 @@
 # clp
 A tiny and fast command line arguments parser and help generator.
 
+## Why yet another arguments parser?
+Because I haven't found yet such a nice one. :smile:
+
+Well, I liked the [Qt command line parser](http://doc.qt.io/qt-5/qcommandlineparser.html), and I wanted to create an equivalent written in NodeJS. The code looks better and more organized in this style. Also, with *clp* you can easily generate and display help content and version information.
+
 ## Installation
 
 ```sh
 $ npm i clp
+```
+
+## Examples
+```js
+#!/usr/bin/env node
+
+// Dependencies
+var Clp = require("../lib");
+
+// Create options and add them
+var nameOption = new Clp.Option(["name", "n"], "Someone's name", "name", "Alice")
+  , ageOption = new Clp.Option(["age", "a"], "Someone's age", "age")
+  ;
+
+// Create a new parser
+var parser = new Clp({
+    name: "Name Age"
+  , version: "v1.0"
+  , process: false
+  , exe: "name-age"
+  , examples: "name-age -a 10 --name Bob"
+  , docs_url: "https://github.com/IonicaBizau/node-clp"
+  , notes: "These are some final notes."
+}, [nameOption, ageOption]);
+
+parser.addExample("name-age -a 5 # will default the name to \"Alice\"");
+
+parser.process();
+
+
+// Validate the age
+if (isNaN(parseInt(ageOption.value)) || ageOption.value < 0) {
+    return console.error("Invalid age.");
+}
+
+// Validate the name
+if (!nameOption.value) {
+    return console.error("Invalid name.");
+}
+
+// Use the values
+console.log(nameOption.value + " is " + ageOption.value + " year old.");
+```
+
+The generated help content looks like this:
+
+```sh
+$ ./name-age -h
+Usage: name-age [options]
+
+Options:
+  -n, --name <name>  Someone's name
+  -a, --age <age>    Someone's age
+  -h, --help         Displays this help.
+  -v, --version      Displays version information.
+
+Examples:
+  name-age -a 10 --name Bob
+  name-age -a 5 # will default the name to "Alice"
+
+These are some final notes.
+
+Documentation can be found at https://github.com/IonicaBizau/node-clp
+```
+
+And version...
+
+```sh
+$ ./name-age -v
+name-age v1.0
+```
+
+And passing the options:
+
+```sh
+$ ./name-age -a 6
+Alice is 6 year old.
+$ ./name-age -n Bob -a 30
+Bob is 30 year old.
 ```
 
 ## Documentation
