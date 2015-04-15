@@ -19,7 +19,7 @@ $ npm i clp
 #!/usr/bin/env node
 
 // Dependencies
-var Clp = require("../lib");
+var Clp = require("clp");
 
 // Create options and add them
 var nameOption = new Clp.Option(["name", "n"], "Someone's name", "name", "Alice")
