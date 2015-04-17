@@ -152,10 +152,11 @@ var parser = new CLP(args); // default options, empty clpOptions
 var parser = new CLP(options, clpOptions); // default arguments
 var parser = new CLP(args, clpOptions); // default options
 var parser = new CLP(args, options, clpOptions); // pass everything
+var parser = new CLP("some command", ...); // pass a command string instead of arguments
 ```
 
 #### Params
-- **Array** `args`: An array of strings with the arguments.
+- **Array|String** `args`: An array of strings with the arguments or the command itself.
 - **Object** `options`: An object containing the following fields:
  - `allow_exit` (Boolean): A flag to allow exit or not (e.g. when `-h`
    is passed). This is useful when *CLP* is used in executable scripts,
@@ -206,11 +207,22 @@ Adds a new option to parse.
 #### Return
 - **CLP** The `CLP` instance.
 
+### `addExample(example)`
+Adds a new example.
+
+#### Params
+- **String** `example`: The example to add.
+
+#### Return
+- **CLP** The `CLP` instance.
+
 ### `process()`
 Processes the arguments and adds the values in the options.
 
 #### Return
-- **CLP** The `CLP` instance.
+- **Object** An object containing the following fields:
+ - `error` (Error|null): An error that appeared during the arguments parsing.
+ - `_` (Array): An array of strings representing the values which are not options, nor values, but other arguments (e.g. `some-tool --foo bar other arguments`).
 
 ### `error(err_code, fields)`
 Creates an error by getting the error code and the error fields.
