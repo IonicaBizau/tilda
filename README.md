@@ -1,4 +1,4 @@
-![](http://i.imgur.com/a9aWysM.png)
+![Command Line Parser](http://i.imgur.com/Gcn3nvW.png)
 
 # clp
 A tiny and fast command line arguments parser and help generator.
