@@ -4,6 +4,7 @@
   "description": "A tiny and fast command line arguments parser and help generator.",
   "main": "lib/index.js",
   "directories": {
+    "example": "examples",
     "test": "test"
   },
   "scripts": {
@@ -25,5 +26,11 @@
   "bugs": {
     "url": "https://github.com/IonicaBizau/node-clp/issues"
   },
-  "homepage": "https://github.com/IonicaBizau/node-clp"
+  "homepage": "https://github.com/IonicaBizau/node-clp",
+  "dependencies": {
+    "ul": "^2.1.0",
+    "le-table": "^2.1.0",
+    "ansi-parser": "^1.4.0"
+  },
+  "devDependencies": {}
 }
