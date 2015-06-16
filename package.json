@@ -1,6 +1,6 @@
 {
   "name": "clp",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "A tiny and fast command line arguments parser and help generator.",
   "main": "lib/index.js",
   "directories": {
