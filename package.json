@@ -32,5 +32,8 @@
     "le-table": "3.0.0",
     "ansi-parser": "2.0.0"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "blah": {
+      "h_img": "http://i.imgur.com/Gcn3nvW.png"
+  }
 }
