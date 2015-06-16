@@ -107,7 +107,8 @@ CLP.Option({
 - **Anything** `def`: The default value.
 
 #### Return
-- **CLPOption** An object containing the following fields:  - `aliases` (Array): An array of strings containing the computed aliases,
+- **CLPOption** An object containing the following fields:
+ - `aliases` (Array): An array of strings containing the computed aliases,
     the single letter being the first ones (e.g. `["-n", "--name"]`).
  - `value` (null|String|DefaultValue): The option value which was found
     after processing the arguments.
