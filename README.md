@@ -70,7 +70,7 @@ console.log(nameOption.value + " is " + ageOption.value + " year old.");
 
 ## Documentation
 
-### `CLPOption(aliases, description, name, def)`
+### `CLP.Option(aliases, description, name, def)`
 Creates a new `CLPOption` instance.
 
 Usages:
