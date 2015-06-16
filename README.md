@@ -70,6 +70,52 @@ console.log(nameOption.value + " is " + ageOption.value + " year old.");
 
 ## Documentation
 
+### `CLPOption(aliases, description, name, def)`
+Creates a new `CLPOption` instance.
+
+Usages:
+
+```js
+CLP.Option(["age", "a"], "The age value.", "age", 20);
+CLP.Option("age", "The age value.", "age", 20);
+CLP.Option({
+    aliases: ["age", "a"]
+  , description: "The age value."
+  , name: "age"
+  , def: 20
+  , handler: function (opt) {
+       // Do something with opt
+    }
+});
+```
+
+#### Params
+- **Array|Object** `aliases`: An array of strings representing the aliases  (e.g. `["name", "n"]`), a string representing a single alias (e.g. `"name"`)
+ or an object containing the following fields:
+
+ - `aliases` (Array): An array of strings representing the
+    aliases (e.g. `["name", "n"]`)
+ - `def` (Anything): The default value.
+ - `description` (String): The option description.
+ - `name` (String): The option name. If provided, the parser will expect a value otherwise
+   will return or display an error.
+ - `handler` (Function): The option handler which will be called when the
+   option is found in the arguments. The first parameter is the option
+   object and the scope is the `CLP` instance.
+- **String** `description`: The option description.
+- **String** `name`: The option name.
+- **Anything** `def`: The default value.
+
+#### Return
+- **CLPOption** An object containing the following fields:  - `aliases` (Array): An array of strings containing the computed aliases,
+    the single letter being the first ones (e.g. `["-n", "--name"]`).
+ - `value` (null|String|DefaultValue): The option value which was found
+    after processing the arguments.
+ - `def` (Anything): The provided default value.
+ - `description` (String): The option description.
+ - `name` (String): The option name.
+ - `is_provided` (Boolean): A flag if the option was or not been provided.
+
 ### `CLP(args, options, clpOptions)`
 Creates a new `CLP` (command line parser) instance.
 
