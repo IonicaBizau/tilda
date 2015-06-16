@@ -1,6 +1,6 @@
 {
   "name": "clp",
-  "version": "1.2.0",
+  "version": "2.0.0",
   "description": "A tiny and fast command line arguments parser and help generator.",
   "main": "lib/index.js",
   "directories": {
@@ -28,9 +28,9 @@
   },
   "homepage": "https://github.com/IonicaBizau/node-clp",
   "dependencies": {
-    "ul": "^2.1.0",
-    "le-table": "^2.1.0",
-    "ansi-parser": "^1.4.0"
+    "ul": "5.0.0",
+    "le-table": "3.0.0",
+    "ansi-parser": "2.0.0"
   },
   "devDependencies": {}
 }
