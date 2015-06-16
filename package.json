@@ -29,7 +29,7 @@
   "homepage": "https://github.com/IonicaBizau/node-clp",
   "dependencies": {
     "ul": "5.0.0",
-    "le-table": "3.0.0",
+    "le-table": "4.0.0",
     "ansi-parser": "2.0.0"
   },
   "devDependencies": {},
