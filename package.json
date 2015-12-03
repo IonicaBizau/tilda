@@ -1,6 +1,6 @@
 {
   "name": "clp",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "A tiny and fast command line arguments parser and help generator.",
   "main": "lib/index.js",
   "directories": {
@@ -22,7 +22,7 @@
     "parser"
   ],
   "author": "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net)",
-  "license": "KINDLY",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/IonicaBizau/node-clp/issues"
   },
