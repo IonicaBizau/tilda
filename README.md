@@ -1,8 +1,8 @@
 [![clp](http://i.imgur.com/Gcn3nvW.png)](#)
 
-# clp [![Support this project][donate-now]][paypal-donations]
+# clp [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Version](https://img.shields.io/npm/v/clp.svg)](https://www.npmjs.com/package/clp) [![Downloads](https://img.shields.io/npm/dt/clp.svg)](https://www.npmjs.com/package/clp) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
 
-A tiny and fast command line arguments parser and help generator.
+> A tiny and fast command line arguments parser and help generator.
 
 ## Installation
 
@@ -225,6 +225,8 @@ If you are using this library in one of your projects, add it in this list. :spa
 
  - [`engine-tools`](https://github.com/jillix/engine-tools) by jillix
 
+ - [`gh-notifier`](https://bitbucket.org/IonicaBizau/gh-notifier#readme)
+
  - [`ghcal`](https://github.com/IonicaBizau/ghcal)
 
  - [`git-issues`](https://github.com/softwarescales/git-issues) by Gabriel Petrovay
@@ -232,6 +234,8 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`git-stats`](https://github.com/IonicaBizau/git-stats)
 
  - [`git-stats-importer`](https://github.com/IonicaBizau/git-stats-importer)
+
+ - [`github-emojify`](https://github.com/IonicaBizau/github-emojifiy#readme)
 
  - [`github-labeller`](https://github.com/IonicaBizau/github-labeller#readme)
 
@@ -242,6 +246,8 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`kindly-license`](https://github.com/IonicaBizau/kindly-license)
 
  - [`name-it`](https://github.com/IonicaBizau/name-it#readme)
+
+ - [`namly`](https://github.com/IonicaBizau/namly#readme)
 
  - [`namy`](https://github.com/IonicaBizau/namy)
 
