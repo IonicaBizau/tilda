@@ -4,200 +4,233 @@
 
 > A tiny and fast command line arguments parser and help generator.
 
-## Installation
-
+## :cloud: Installation
+    
 ```sh
 $ npm i --save clp
 ```
 
-## Example
+            
+## :clipboard: Example
+
+        
 
 ```js
 #!/usr/bin/env node
 
-// Dependencies
-var Clp = require("clp");
+// ./index.js -f tux 'Hello World!'
+//  ______________
+// < Hello World! >
+//  --------------
+//    \
+//     \
+//         .--.
+//        |o_o |
+//        |:_/ |
+//       //   \ \
+//      (|     | )
+//     /'\_   _/`\
+//     \___)=(___/
+//
+// Help output
+// -----------
+//
+// ./index.js --help
+// Usage: cowsay <command> <text> [options]
+//
+// Configurable speaking cow (and a bit more)
+//
+// Commands:
+//   list  List the cow templates.
+//
+// Options:
+//   -e, --eye <str>      The eye string.
+//   -T, --tongue <str>   The tongue string.
+//   -f, --cowfile <cow>  The cowfile.
+//   -v, --version        Displays version information.
+//   -h, --help           Displays this help.
+//
+// Examples:
+//   $ cowsay 'Hello there!'
+//   $ cowsay -e '*-' 'Heyyy!
+//   $ cowsay -T '++' 'I have a nice tongue!
+//
+// Well, this is just a tiny example how to use Tilda.
+// Documentation can be found at https://github.com/IonicaBizau/tilda.
 
-// Create options and add them
-var nameOption = new Clp.Option(["name", "n"], "Someone's name", "name", "Alice")
-  , ageOption = new Clp.Option(["age", "a"], "Someone's age", "age")
-  ;
+"use strict";
 
-// Create a new parser
-var parser = new Clp({
-    name: "Name Age"
-  , version: "v1.0"
-  , process: false
-  , exe: "name-age"
-  , examples: "name-age -a 10 --name Bob"
-  , docs_url: "https://github.com/IonicaBizau/node-clp"
-  , notes: "These are some final notes."
-}, [nameOption, ageOption]);
+const Tilda = require("clp")
+    , cowsay = require("cowsay")
+    ;
 
-parser.addExample("name-age -a 5 # will default the name to \"Alice\"");
-
-parser.process();
-
-// Validate the age
-if (isNaN(parseInt(ageOption.value)) || ageOption.value < 0) {
-    return console.error("Invalid age.");
-}
-
-// Validate the name
-if (!nameOption.value) {
-    return console.error("Invalid name.");
-}
-
-// Use the values
-console.log(nameOption.value + " is " + ageOption.value + " year old.");
-```
-
-## Documentation
-
-### `CLP.Option(aliases, description, name, def)`
-Creates a new `CLPOption` instance.
-
-Usages:
-
-```js
-CLP.Option(["age", "a"], "The age value.", "age", 20);
-CLP.Option("age", "The age value.", "age", 20);
-CLP.Option({
-    aliases: ["age", "a"]
-  , description: "The age value."
-  , name: "age"
-  , def: 20
-  , handler: function (opt) {
-       // Do something with opt
+let p = new Tilda({
+    name: "cowsay"
+  , version: "1.0.0"
+  , description: "Configurable speaking cow (and a bit more)"
+  , documentation: "https://github.com/IonicaBizau/tilda"
+  , examples: [
+        "cowsay 'Hello there!'"
+      , "cowsay -e '*-' 'Heyyy!"
+      , "cowsay -T '++' 'I have a nice tongue!"
+    ]
+  , notes: "Well, this is just a tiny example how to use Tilda."
+  , args: ["text"]
+}).option([
+    {
+        opts: ["eye", "e"]
+      , desc: "The eye string."
+      , name: "str"
     }
+  , {
+        opts: ["tongue", "T"]
+      , desc: "The tongue string."
+      , name: "str"
+    }
+  , {
+        opts: ["cowfile", "f"]
+      , desc: "The cowfile."
+      , name: "cow"
+      , default: "default"
+    }
+]).action([
+    {
+        name: "list"
+      , desc: "List the cow templates."
+      , options: [
+            {
+                opts: ["list", "l"],
+                desc: "Display as list",
+            }
+        ]
+    }
+]).on("list", action => {
+    cowsay.list((err, list) => {
+        if (err) { return this.exit(err); }
+        let str = list.join(action.options.list.is_provided ? "\n" : ", ")
+        console.log(str);
+    });
+}).main(action => {
+    console.log(cowsay.say({
+        text: action.args.text
+      , e: action.options.eye.value
+      , T: action.options.tongue.value
+      , f: action.options.cowfile.value
+    }));
 });
 ```
+    
+## :memo: Documentation
+        
+### `TildaOption(input)`
+The `TildaOption` class used for creating option objects.
 
 #### Params
-- **Array|Object** `aliases`: An array of strings representing the aliases  (e.g. `["name", "n"]`), a string representing a single alias (e.g. `"name"`)
- or an object containing the following fields:
-
- - `aliases` (Array): An array of strings representing the
-    aliases (e.g. `["name", "n"]`)
- - `def` (Anything): The default value.
+- **Object** `input`: An object containing the following fields:
+ - `name` (String): The option name (optional).
  - `description` (String): The option description.
- - `name` (String): The option name. If provided, the parser will expect a value otherwise
-   will return or display an error.
+ - `opts` (Array): An array of aliases (e.g. `["age", "a"]`).
+ - `default` (Anything): The default value.
  - `handler` (Function): The option handler which will be called when the
    option is found in the arguments. The first parameter is the option
-   object and the scope is the `CLP` instance.
-- **String** `description`: The option description.
-- **String** `name`: The option name.
-- **Anything** `def`: The default value.
+   object and the second argument is the action where the option belongs to.
+ - `required` (Boolean): A flag representing if the option is mandatory or not (default: `false`).
+ - `type` (Class|String): The type class (e.g. `String`) or its stringified representation (e.g. `"string"`).
 
 #### Return
-- **CLPOption** An object containing the following fields:
+- **TildaOption** The `TildaOption` instance.
+ - `description` (String): The option description.
+ - `opts` (Array): An array of aliases (e.g. `["age", "a"]`).
  - `aliases` (Array): An array of strings containing the computed aliases,
-    the single letter being the first ones (e.g. `["-n", "--name"]`).
+    the single letter ones being the first (e.g. `["-n", "--name"]`).
  - `value` (null|String|DefaultValue): The option value which was found
     after processing the arguments.
  - `def` (Anything): The provided default value.
- - `description` (String): The option description.
- - `name` (String): The option name.
  - `is_provided` (Boolean): A flag if the option was or not been provided.
+ - `handler` (Function): The handler function.
+ - `required` (Boolean): The required value.
+ - `type` (Class|String): The option value type.
 
-### `CLP(args, options, clpOptions)`
-Creates a new `CLP` (command line parser) instance.
+### `TildaAction(info, options)`
+The `TildaAction` class used for creating action objects.
 
-Usage
-
-```js
-var parser = new CLP(); // will take the arguments from `process.argv`
-var parser = new CLP(args); // default options, empty clpOptions
-var parser = new CLP(options, clpOptions); // default arguments
-var parser = new CLP(args, clpOptions); // default options
-var parser = new CLP(args, options, clpOptions); // pass everything
-var parser = new CLP("some command", ...); // pass a command string instead of arguments
-```
+This is extended `EventEmitter`.
 
 #### Params
-- **Array|String** `args`: An array of strings with the arguments or the command itself.
-- **Object** `options`: An object containing the following fields:
- - `allow_exit` (Boolean): A flag to allow exit or not (e.g. when `-h`
-   is passed). This is useful when *CLP* is used in executable scripts,
-   however, when you only want to parse an array you should turn this
-   off (default: `true`).
- - `help_opt` (Boolean): A flag to add the help option (default: `true`).
- - `version_opt` (Boolean): A flag to add the version option (default: `true`).
- - `name` (String): The application name (default: `"No Name"`).
- - `exe` (String): The executable name (default: `"no-name"`).
- - `version` (String): The application version (default: `"No Version"`).
- - `process` (Boolean): A flag to process the CLP options imediatelly (default: `false`).
- - `docs_url` (String): The documentation url (default: `""`).
- - `notes` (String): Final notes placed between examples and documentation
-   url in help content (default: `""`).
- - `examples` (String|Array): A string or an array of string containing examples.
-- **Array** `clpOptions`:
+- **String|Object** `info`: The path to a containing the needed information or an object containing:
+ - `description|desc` (String): The action description.
+ - `name` (String): The action name.
+ - `bin` (Object): A `package.json`-like `bin` field (optional).
+ - `args` (Array): An array of strings representing the action argument names (default: `[]`).
+ - `examples` (Array): An array of strings containing examples how to use the action.
+ - `notes` (String): Additional notes to display in the help command.
+ - `documentation` (String): Action-related documentation.
+- **Object** `options`: An object containing the following fields (if provided, they have priority over the `info` object):
+
+ - `args` (Array): An array of strings representing the action argument names (default: `[]`).
+ - `examples` (Array): An array of strings containing examples how to use the action.
+ - `notes` (String): Additional notes to display in the help command.
+ - `documentation` (String): Action-related documentation.
 
 #### Return
-- **CLP** The `CLP` instance.
+- **TildaAction** The `TildaAction` instance containing:
+ - `options` (Object): The action options.
+ - `description` (String): The action description.
+ - `name` (String): The action name.
+ - `uniqueOpts` (Array): An array of unique options in order.
+ - `argNames` (Array): The action arguments.
+ - `args` (Object): The arguments' values.
+ - `examples` (Array): An array of strings containing examples how to use the action.
+ - `notes` (String): Additional notes to display in the help command.
+ - `documentation` (String): Action-related documentation.
 
-### `addHelpOption(args, desc)`
-Adds the help option.
+### `option(input)`
+Adds one or more options to the action object.
 
 #### Params
-- **Array** `args`: Optional alias options for the help option (default: `["h", "help"]`).
-- **String** `desc`: The help description (default: `"Displays this help."`).
+- **Array|Object** `input`: An array of option objects or an object passed to the `TildaOption` class.
 
-#### Return
-- **CLP** The `CLP` instance.
-
-### `addVersionOption(args, desc)`
-Adds the help option.
+### `Tilda(info, options)`
+Creates the parser instance.
 
 #### Params
-- **Array** `args`: Optional alias options for the version option (default: `["h", "help"]`).
-- **String** `desc`: The version description (default: `"Displays version information."`).
+- **Object** `info`: The `info` object passed to `TildaAction`.
+- **Object** `options`: The `options` passed to `TildaAction`, extended with:
+ - `defaultOptions` (Array): Default and global options (default: help and version options).
+ - `argv` (Array): A cutom array of arguments to parse (default: process arguments).
 
 #### Return
-- **CLP** The `CLP` instance.
+- **Tilda** The `Tilda` instance containing:
+ - `actions` (Object): An object containing the action objects.
+ - `version` (String): The version (used in help and version outputs).
+ - `argv` (Array): Array of arguments to parse.
+ - `_globalOptions` (Array): The global options, appended to all the actions.
+ - `actionNames` (Array): Action names in order.
 
-### `addOption(opt)`
-Adds a new option to parse.
+### `globalOption(input)`
+Adds a global option for all the actions.
 
 #### Params
-- **CLPOption** `opt`: The `CLPOption` value to add.
+- **Array|Object** `input`: The option object.
 
-#### Return
-- **CLP** The `CLP` instance.
-
-### `addExample(example)`
-Adds a new example.
+### `action(input, opts)`
+Adds a new action.
 
 #### Params
-- **String** `example`: The example to add.
+- **Object** `input`: The info object passed to `TildaAction`.
+- **Array** `opts`: The action options.
 
-#### Return
-- **CLP** The `CLP` instance.
-
-### `process()`
-Processes the arguments and adds the values in the options.
-
-#### Return
-- **Object** An object containing the following fields:
- - `error` (Error|null): An error that appeared during the arguments parsing.
- - `_` (Array): An array of strings representing the values which are not options, nor values, but other arguments (e.g. `some-tool --foo bar other arguments`).
-
-### `error(err_code, fields)`
-Creates an error by getting the error code and the error fields.
+### `exit(msg, code)`
+Exits the process.
 
 #### Params
-- **String** `err_code`: The error code.
-- **Object** `fields`: An object with the error fields.
+- **String|Object** `msg`: The stringified message or an object containing the error code.
+- **Number** `code`: The exit code (default: `0`).
 
-#### Return
-- **Error** The error which was built.
+### `parse()`
+Parses the arguments. This is called internally.
 
-### `displayHelp()`
-Generates the help content and returns it.
-
-#### Return
-- **String** The help information.
+This emits the action names as events.
 
 ### `displayVersion()`
 Returns the version information.
@@ -205,70 +238,64 @@ Returns the version information.
 #### Return
 - **String** The version information.
 
-## How to contribute
+### `displayHelp(action)`
+Displays the help output.
+
+#### Params
+- **TildaAction** `action`: The action you want to display help for.
+
+### `main(cb)`
+Append a handler when the main action is used.
+
+#### Params
+- **Function** `cb`: The callback function.
+
+        
+## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
-## Where is this library used?
+## :dizzy: Where is this library used?
 If you are using this library in one of your projects, add it in this list. :sparkles:
 
- - [`a-csv`](https://github.com/jillix/a-csv) by jillix
+ - [`a-csv`](https://github.com/jillix/a-csv) (by jillix)—A lightweight CSV parser.
+ - [`arc-asm`](https://github.com/IonicaBizau/arc-assembler)—An ARC assembler written in Node.JS.
+ - [`birthday`](https://github.com/IonicaBizau/birthday)—Know when a friend's birthday is coming.
+ - [`blah`](https://github.com/IonicaBizau/blah)—A command line tool to optimize the repetitive actions.
+ - [`cdnjs-importer`](https://github.com/cdnjs/cdnjs-importer)—Easy way to import a library into CDNJS.
+ - [`cli-gh-cal`](https://github.com/IonicaBizau/cli-gh-cal)—GitHub like calendar graphs in command line.
+ - [`diable`](https://github.com/IonicaBizau/diable)—Daemonize the things out.
+ - [`emojer-cli`](https://github.com/IonicaBizau/emojer-cli#readme)—Command line tool for emojer.
+ - [`engine-tools`](https://github.com/jillix/engine-tools) (by jillix)—Engine Tools library and CLI app.
+ - [`gh-notifier`](https://bitbucket.org/IonicaBizau/gh-notifier#readme)—Receive desktop notifications from your GitHub dashboard.
+ - [`ghcal`](https://github.com/IonicaBizau/ghcal)—See the GitHub contributions calendar of a user in the command line.
+ - [`git-issues`](https://github.com/softwarescales/git-issues) (by Gabriel Petrovay)—Git issues extension to list issues of a Git project
+ - [`git-stats`](https://github.com/IonicaBizau/git-stats)—Local git statistics including GitHub-like contributions calendars.
+ - [`git-stats-importer`](https://github.com/IonicaBizau/git-stats-importer)—Imports your commits from a repository into git-stats history.
+ - [`github-emojify`](https://github.com/IonicaBizau/github-emojifiy#readme)—Emojify your GitHub repository descriptions.
+ - [`github-labeller`](https://github.com/IonicaBizau/github-labeller#readme)—Automagically create issue labels in your GitHub projects.
+ - [`github-stats`](https://github.com/IonicaBizau/github-stats)—Visualize stats about GitHub users and projects in your terminal.
+ - [`gpm`](https://github.com/IonicaBizau/gpm)—npm + git = gpm - Install NPM packages and dependencies from git repositories.
+ - [`image-to-ascii-cli`](https://github.com/IonicaBizau/image-to-ascii-cli#readme)—View images in text format, in your terminal.
+ - [`kindly-license`](https://github.com/IonicaBizau/kindly-license)—A human readable license for projects created by human-beings.
+ - [`name-it`](https://github.com/IonicaBizau/name-it#readme)—Generate project names from given keywords.
+ - [`namly`](https://github.com/IonicaBizau/namly#readme)—A tool for helping you to choose npm package names.
+ - [`namy`](https://github.com/IonicaBizau/namy)—Gets the name of the exported function.
+ - [`np-init-cli`](https://github.com/IonicaBizau/np-init-cli#readme)—CLI for starting a new npm package.
+ - [`npmreserve`](https://github.com/IonicaBizau/npmreserve)—Reserve package names on NPM.
+ - [`packy`](https://github.com/IonicaBizau/packy#readme)—Set default fields in your package.json files.
+ - [`photon-browser`](https://github.com/IonicaBizau/photon-browser#readme)—A tiny web browser based on Photon and Electron.
+ - [`rucksack`](https://github.com/IonicaBizau/rucksack#readme)—Bundle js files by replacing the require calls in-place.
+ - [`ssh-remote`](https://github.com/IonicaBizau/ssh-remote)—Automagically switch on the SSH remote url in a Git repository.
+ - [`statique`](https://github.com/IonicaBizau/node-statique)—A Node.JS static server module with built-in cache options and route features.
+ - [`tinyreq-cli`](https://github.com/IonicaBizau/tinyreq-cli#readme)—A cli tool for making http(s) requests. CLI for tinyreq.
+ - [`tithe`](https://github.com/IonicaBizau/tithe)—Organize and track the tithe payments.
+ - [`web-term`](https://github.com/IonicaBizau/web-term)—A full screen terminal in your browser.
+ - [`wrabbit`](https://github.com/jillix/wrabbit) (by jillix)—Wrap scripts by providing the wrapping function.
 
- - [`birthday`](https://github.com/IonicaBizau/birthday)
-
- - [`blah`](https://github.com/IonicaBizau/blah)
-
- - [`cdnjs-importer`](https://github.com/cdnjs/cdnjs-importer)
-
- - [`cli-gh-cal`](https://github.com/IonicaBizau/cli-gh-cal)
-
- - [`diable`](https://github.com/IonicaBizau/diable)
-
- - [`engine-tools`](https://github.com/jillix/engine-tools) by jillix
-
- - [`gh-notifier`](https://bitbucket.org/IonicaBizau/gh-notifier#readme)
-
- - [`ghcal`](https://github.com/IonicaBizau/ghcal)
-
- - [`git-issues`](https://github.com/softwarescales/git-issues) by Gabriel Petrovay
-
- - [`git-stats`](https://github.com/IonicaBizau/git-stats)
-
- - [`git-stats-importer`](https://github.com/IonicaBizau/git-stats-importer)
-
- - [`github-emojify`](https://github.com/IonicaBizau/github-emojifiy#readme)
-
- - [`github-labeller`](https://github.com/IonicaBizau/github-labeller#readme)
-
- - [`github-stats`](https://github.com/IonicaBizau/github-stats)
-
- - [`gpm`](https://github.com/IonicaBizau/gpm)
-
- - [`kindly-license`](https://github.com/IonicaBizau/kindly-license)
-
- - [`name-it`](https://github.com/IonicaBizau/name-it#readme)
-
- - [`namly`](https://github.com/IonicaBizau/namly#readme)
-
- - [`namy`](https://github.com/IonicaBizau/namy)
-
- - [`npmreserve`](https://github.com/IonicaBizau/npmreserve)
-
- - [`ssh-remote`](https://github.com/IonicaBizau/ssh-remote)
-
- - [`statique`](https://github.com/IonicaBizau/node-statique)
-
- - [`tinyreq`](https://github.com/IonicaBizau/tinyreq)
-
- - [`tithe`](https://github.com/IonicaBizau/tithe)
-
- - [`web-term`](https://github.com/IonicaBizau/web-term)
-
- - [`wrabbit`](https://github.com/jillix/wrabbit) by jillix
-
-## License
-
+## :scroll: License
+    
 [MIT][license] © [Ionică Bizău][website]
-
+    
 [paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW
 [donate-now]: http://i.imgur.com/6cMbHOC.png
 
