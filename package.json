@@ -1,7 +1,7 @@
 {
   "name": "tilda",
   "version": "4.0.0",
-  "description": "Tiny module for building comand line tools.",
+  "description": "Tiny module for building command line tools.",
   "main": "lib/index.js",
   "directories": {
     "example": "examples",
