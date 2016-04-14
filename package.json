@@ -1,7 +1,7 @@
 {
-  "name": "clp",
+  "name": "tilda",
   "version": "3.2.1",
-  "description": "A tiny and fast command line arguments parser and help generator.",
+  "description": "Tiny module for building comand line tools.",
   "main": "lib/index.js",
   "directories": {
     "example": "examples",
@@ -12,10 +12,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:IonicaBizau/node-clp.git"
+    "url": "git@github.com:IonicaBizau/tilda.git"
   },
   "keywords": [
-    "clp",
+    "tilda",
     "command",
     "line",
     "arguments",
@@ -24,9 +24,9 @@
   "author": "Ionică Bizău <bizauionica@gmail.com> (http://ionicabizau.net)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/IonicaBizau/node-clp/issues"
+    "url": "https://github.com/IonicaBizau/tilda/issues"
   },
-  "homepage": "https://github.com/IonicaBizau/node-clp",
+  "homepage": "https://github.com/IonicaBizau/tilda",
   "dependencies": {
     "ansi-parser": "^3.2.1",
     "arrs-to-obj": "^1.0.0",
@@ -46,6 +46,6 @@
     "cowsay": "^1.1.5"
   },
   "blah": {
-    "h_img": "http://i.imgur.com/Gcn3nvW.png"
+    "h_img": "http://i.imgur.com/kLOhs5t.png"
   }
 }
