@@ -184,6 +184,15 @@ This is extended `EventEmitter`.
  - `notes` (String): Additional notes to display in the help command.
  - `documentation` (String): Action-related documentation.
 
+### `readInfo(info)`
+Converts the info input into json output.
+
+#### Params
+- **String|Object** `info`: The info object or path to a json file.
+
+#### Return
+- **Object** The info object.
+
 ### `option(input)`
 Adds one or more options to the action object.
 
@@ -268,6 +277,7 @@ Have an idea? Found a bug? See [how to contribute][contributing].
 ## :dizzy: Where is this library used?
 If you are using this library in one of your projects, add it in this list. :sparkles:
 
+ - [`tithe`](https://github.com/IonicaBizau/tithe)—Organize and track the tithe payments.
  - [`web-term`](https://github.com/IonicaBizau/web-term)—A full screen terminal in your browser.
 ## :scroll: License
     
