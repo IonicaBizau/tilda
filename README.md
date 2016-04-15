@@ -250,10 +250,25 @@ Append a handler when the main action is used.
 #### Params
 - **Function** `cb`: The callback function.
 
+### `convertTo(classConst, input, opts)`
+Converts an input into a class instance.
+
+#### Params
+- **Class** `classConst`: The class to convert to.
+- **Object|Array** `input`: The object info.
+- **Object** `opts`: The options object (optional).
+
+#### Return
+- **TildaAction|TildaOption** The input converted into a class instance.
+
         
 ## :yum: How to contribute
 Have an idea? Found a bug? See [how to contribute][contributing].
 
+## :dizzy: Where is this library used?
+If you are using this library in one of your projects, add it in this list. :sparkles:
+
+ - [`web-term`](https://github.com/IonicaBizau/web-term)—A full screen terminal in your browser.
 ## :scroll: License
     
 [MIT][license] © [Ionică Bizău][website]
