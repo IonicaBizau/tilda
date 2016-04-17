@@ -75,7 +75,11 @@ let p = new Tilda({
       , "cowsay -T '++' 'I have a nice tongue!"
     ]
   , notes: "Well, this is just a tiny example how to use Tilda."
-  , args: ["text"]
+  , args: [{
+        name: "text"
+      , type: String
+      , desc: "The text to display."
+    }]
 }).option([
     {
         opts: ["eye", "e"]
@@ -161,13 +165,13 @@ This is extended `EventEmitter`.
  - `description|desc` (String): The action description.
  - `name` (String): The action name.
  - `bin` (Object): A `package.json`-like `bin` field (optional).
- - `args` (Array): An array of strings representing the action argument names (default: `[]`).
+ - `args` (Array): An array of strings/objects representing the action argument names (default: `[]`).
  - `examples` (Array): An array of strings containing examples how to use the action.
  - `notes` (String): Additional notes to display in the help command.
  - `documentation` (String): Action-related documentation.
 - **Object** `options`: An object containing the following fields (if provided, they have priority over the `info` object):
 
- - `args` (Array): An array of strings representing the action argument names (default: `[]`).
+ - `args` (Array): An array of strings/objects representing the action argument names (default: `[]`).
  - `examples` (Array): An array of strings containing examples how to use the action.
  - `notes` (String): Additional notes to display in the help command.
  - `documentation` (String): Action-related documentation.
@@ -178,7 +182,8 @@ This is extended `EventEmitter`.
  - `description` (String): The action description.
  - `name` (String): The action name.
  - `uniqueOpts` (Array): An array of unique options in order.
- - `argNames` (Array): The action arguments.
+ - `_args` (Array): The action arguments.
+ - `argNames` (Array): The action argument names.
  - `args` (Object): The arguments' values.
  - `examples` (Array): An array of strings containing examples how to use the action.
  - `notes` (String): Additional notes to display in the help command.
@@ -277,8 +282,11 @@ Have an idea? Found a bug? See [how to contribute][contributing].
 ## :dizzy: Where is this library used?
 If you are using this library in one of your projects, add it in this list. :sparkles:
 
+ - [`cli-sunset`](https://github.com/IonicaBizau/cli-sunset)—A fancy command line tool for knowing the sunset time.
+ - [`np-init-cli`](https://github.com/IonicaBizau/np-init-cli#readme)—CLI for starting a new npm package.
  - [`tithe`](https://github.com/IonicaBizau/tithe)—Organize and track the tithe payments.
  - [`web-term`](https://github.com/IonicaBizau/web-term)—A full screen terminal in your browser.
+
 ## :scroll: License
     
 [MIT][license] © [Ionică Bizău][website]
