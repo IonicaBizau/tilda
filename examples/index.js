@@ -57,7 +57,11 @@ let p = new Tilda({
       , "cowsay -T '++' 'I have a nice tongue!"
     ]
   , notes: "Well, this is just a tiny example how to use Tilda."
-  , args: ["text"]
+  , args: [{
+        name: "text"
+      , type: String
+      , desc: "The text to display."
+    }]
 }).option([
     {
         opts: ["eye", "e"]
