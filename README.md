@@ -1,7 +1,9 @@
 
 [![tilda](http://i.imgur.com/kLOhs5t.png)](#)
 
-# tilda [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![Version](https://img.shields.io/npm/v/tilda.svg)](https://www.npmjs.com/package/tilda) [![Downloads](https://img.shields.io/npm/dt/tilda.svg)](https://www.npmjs.com/package/tilda) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
+# tilda
+
+ [![PayPal](https://img.shields.io/badge/%24-paypal-f39c12.svg)][paypal-donations] [![AMA](https://img.shields.io/badge/ask%20me-anything-1abc9c.svg)](https://github.com/IonicaBizau/ama) [![Version](https://img.shields.io/npm/v/tilda.svg)](https://www.npmjs.com/package/tilda) [![Downloads](https://img.shields.io/npm/dt/tilda.svg)](https://www.npmjs.com/package/tilda) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
 
 > Tiny module for building command line tools.
 
@@ -288,8 +290,11 @@ If you are using this library in one of your projects, add it in this list. :spa
 
  - [`blah`](https://github.com/IonicaBizau/blah)—A command line tool to optimize the repetitive actions.
  - [`cli-sunset`](https://github.com/IonicaBizau/cli-sunset)—A fancy command line tool for knowing the sunset time.
+ - [`gitlist`](https://github.com/SpaceG/gitlist.io#readme) (by lucasgatsas)—Gitlist OS
+ - [`mdy`](https://github.com/IonicaBizau/mdy#readme)—View markdown files in the command line with ANSI styled images.
  - [`np-init-cli`](https://github.com/IonicaBizau/np-init-cli#readme)—CLI for starting a new npm package.
  - [`packy`](https://github.com/IonicaBizau/packy#readme)—Set default fields in your package.json files.
+ - [`ship-release`](https://github.com/IonicaBizau/ship-release#readme)—Publish new versions on GitHub and npm with ease.
  - [`tithe`](https://github.com/IonicaBizau/tithe)—Organize and track the tithe payments.
  - [`web-term`](https://github.com/IonicaBizau/web-term)—A full screen terminal in your browser.
 
