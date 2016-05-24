@@ -30,6 +30,7 @@
   "dependencies": {
     "ansi-parser": "^3.2.1",
     "arrs-to-obj": "^1.0.0",
+    "camelo": "^1.1.2",
     "clp": "^4.0.0",
     "deffy": "^2.2.1",
     "err": "^2.1.0",
