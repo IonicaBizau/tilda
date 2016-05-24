@@ -1,6 +1,6 @@
 {
   "name": "tilda",
-  "version": "4.2.1",
+  "version": "4.2.2",
   "description": "Tiny module for building command line tools.",
   "main": "lib/index.js",
   "directories": {
@@ -50,5 +50,16 @@
   },
   "blah": {
     "h_img": "http://i.imgur.com/kLOhs5t.png"
-  }
+  },
+  "files": [
+    "bin/",
+    "app/",
+    "lib/",
+    "dist/",
+    "src/",
+    "resources/",
+    "menu/",
+    "cli.js",
+    "index.js"
+  ]
 }
