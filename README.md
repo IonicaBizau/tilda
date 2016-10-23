@@ -7,6 +7,15 @@
 
 > Tiny module for building command line tools.
 
+### Features
+
+ - Human readable syntax and easy to use
+ - Supports custom options and commands
+ - Auto parse the command line arguments
+ - Supports reading the `stdin` data
+ - Opens prompts in the command line if the value is required but was not provided
+
+
 ## :cloud: Installation
 
 ```sh
@@ -82,6 +91,7 @@ let p = new Tilda({
         name: "text"
       , type: String
       , desc: "The text to display."
+      , stdin: true
     }]
 }).option([
     {
@@ -119,7 +129,7 @@ let p = new Tilda({
     });
 }).main(action => {
     console.log(cowsay.say({
-        text: action.args.text
+        text: action.stdinData || action.args.text || " "
       , e: action.options.eye.value
       , T: action.options.tongue.value
       , f: action.options.cowfile.value
@@ -144,6 +154,7 @@ The `TildaOption` class used for creating option objects.
    object and the second argument is the action where the option belongs to.
  - `required` (Boolean): A flag representing if the option is mandatory or not (default: `false`).
  - `type` (Class|String): The type class (e.g. `String`) or its stringified representation (e.g. `"string"`).
+ - `prompt` (Boolean|Object): If `false`, it will disable the prompt even if the option is required. If it's an object, it will passed as options to `prompt-sync`.
 
 #### Return
 - **TildaOption** The `TildaOption` instance.
@@ -158,6 +169,7 @@ The `TildaOption` class used for creating option objects.
  - `handler` (Function): The handler function.
  - `required` (Boolean): The required value.
  - `type` (Class|String): The option value type.
+ - `prompt` (Boolean|Object): The prompt settings..
 
 ### `TildaAction(info, options)`
 The `TildaAction` class used for creating action objects.
@@ -192,6 +204,7 @@ This is extended `EventEmitter`.
  - `examples` (Array): An array of strings containing examples how to use the action.
  - `notes` (String): Additional notes to display in the help command.
  - `documentation` (String): Action-related documentation.
+ - `stdinData` (String): The stdin data.
 
 ### `readInfo(info)`
 Converts the info input into json output.
@@ -304,10 +317,13 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`blah`](https://github.com/IonicaBizau/blah)—A command line tool to optimize the repetitive actions.
  - [`bloggify-cli`](https://github.com/Bloggify/bloggify-cli#readme)—CLI for Bloggify.
  - [`cli-confeti`](https://github.com/IonicaBizau/cli-confeti#readme)—Confeti in your terminal.
+ - [`cli-confetti`](https://github.com/IonicaBizau/cli-confetti#readme)—Confetti in your terminal.
  - [`cli-emoji`](https://github.com/IonicaBizau/cli-emoji#readme)—Big emojis in your terminal.
+ - [`cli-gh-cal`](https://github.com/IonicaBizau/cli-gh-cal)—GitHub like calendar graphs in command line.
  - [`cli-sunset`](https://github.com/IonicaBizau/cli-sunset)—A fancy command line tool for knowing the sunset time.
  - [`fengine`](https://nuintun.github.io/fengine) (by nuintun)—A development tool for f2e
  - [`flight-tracker`](https://github.com/IonicaBizau/flight-tracker#readme)—A flight tracker in your command line.
+ - [`git-stats`](https://github.com/IonicaBizau/git-stats)—Local git statistics including GitHub-like contributions calendars.
  - [`gitlist`](https://github.com/SpaceG/gitlist.io#readme) (by lucasgatsas)—Gitlist OS
  - [`mdy`](https://github.com/IonicaBizau/mdy#readme)—View markdown files in the command line with ANSI styled images.
  - [`np-init-cli`](https://github.com/IonicaBizau/np-init-cli#readme)—CLI for starting a new npm package.

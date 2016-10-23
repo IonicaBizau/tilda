@@ -16,6 +16,7 @@ The `TildaOption` class used for creating option objects.
    object and the second argument is the action where the option belongs to.
  - `required` (Boolean): A flag representing if the option is mandatory or not (default: `false`).
  - `type` (Class|String): The type class (e.g. `String`) or its stringified representation (e.g. `"string"`).
+ - `prompt` (Boolean|Object): If `false`, it will disable the prompt even if the option is required. If it's an object, it will passed as options to `prompt-sync`.
 
 #### Return
 - **TildaOption** The `TildaOption` instance.
@@ -30,6 +31,7 @@ The `TildaOption` class used for creating option objects.
  - `handler` (Function): The handler function.
  - `required` (Boolean): The required value.
  - `type` (Class|String): The option value type.
+ - `prompt` (Boolean|Object): The prompt settings..
 
 ### `TildaAction(info, options)`
 The `TildaAction` class used for creating action objects.
@@ -64,6 +66,7 @@ This is extended `EventEmitter`.
  - `examples` (Array): An array of strings containing examples how to use the action.
  - `notes` (String): Additional notes to display in the help command.
  - `documentation` (String): Action-related documentation.
+ - `stdinData` (String): The stdin data.
 
 ### `readInfo(info)`
 Converts the info input into json output.
