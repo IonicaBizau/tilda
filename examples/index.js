@@ -61,6 +61,7 @@ let p = new Tilda({
         name: "text"
       , type: String
       , desc: "The text to display."
+      , stdin: true
     }]
 }).option([
     {
