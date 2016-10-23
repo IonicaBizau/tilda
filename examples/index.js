@@ -98,7 +98,7 @@ let p = new Tilda({
     });
 }).main(action => {
     console.log(cowsay.say({
-        text: action.args.text
+        text: action.stdinData || action.args.text
       , e: action.options.eye.value
       , T: action.options.tongue.value
       , f: action.options.cowfile.value
