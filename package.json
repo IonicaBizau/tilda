@@ -1,6 +1,6 @@
 {
   "name": "tilda",
-  "version": "4.3.3",
+  "version": "4.4.0",
   "description": "Tiny module for building command line tools.",
   "main": "lib/index.js",
   "directories": {
@@ -52,7 +52,21 @@
     "cowsay": "^1.1.5"
   },
   "blah": {
-    "h_img": "http://i.imgur.com/kLOhs5t.png"
+    "h_img": "http://i.imgur.com/kLOhs5t.png",
+    "description": [
+      {
+        "h3": "Features"
+      },
+      {
+        "ul": [
+          "Human readable syntax and easy to use",
+          "Supports custom options and commands",
+          "Auto parse the command line arguments",
+          "Supports reading the `stdin` data",
+          "Opens prompts in the command line if the value is required but was not provided"
+        ]
+      }
+    ]
   },
   "files": [
     "bin/",
