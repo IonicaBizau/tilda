@@ -42,6 +42,7 @@
     "iterate-object": "^1.3.2",
     "le-table": "^6.1.0",
     "prompt-sync": "^4.1.4",
+    "promptify": "^1.0.0",
     "r-json": "^1.2.1",
     "remove-blank-lines": "^1.0.1",
     "typpy": "^2.3.1",
