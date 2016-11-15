@@ -324,6 +324,7 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`fengine`](https://nuintun.github.io/fengine) (by nuintun)—A development tool for f2e
  - [`flight-tracker`](https://github.com/IonicaBizau/flight-tracker#readme)—A flight tracker in your command line.
  - [`git-stats`](https://github.com/IonicaBizau/git-stats)—Local git statistics including GitHub-like contributions calendars.
+ - [`git-stats-html`](https://github.com/IonicaBizau/git-stats-html#readme)—Turn git-stats result into HTML output.
  - [`gitlist`](https://github.com/SpaceG/gitlist.io#readme) (by lucasgatsas)—Gitlist OS
  - [`mdy`](https://github.com/IonicaBizau/mdy#readme)—View markdown files in the command line with ANSI styled images.
  - [`np-init-cli`](https://github.com/IonicaBizau/np-init-cli#readme)—CLI for starting a new npm package.
@@ -344,7 +345,9 @@ If you are using this library in one of your projects, add it in this list. :spa
 [paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW
 [donate-now]: http://i.imgur.com/6cMbHOC.png
 
+
 [license]: http://showalicense.com/?fullname=Ionic%C4%83%20Biz%C4%83u%20%3Cbizauionica%40gmail.com%3E%20(http%3A%2F%2Fionicabizau.net)&year=2015#license-mit
+
 [website]: http://ionicabizau.net
 [contributing]: /CONTRIBUTING.md
 [docs]: /DOCUMENTATION.md
