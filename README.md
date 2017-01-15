@@ -93,6 +93,8 @@ let p = new Tilda({
       , desc: "The text to display."
       , stdin: true
     }]
+}, {
+    stdin: true
 }).option([
     {
         opts: ["eye", "e"]
@@ -229,6 +231,7 @@ Creates the parser instance.
 - **Object** `options`: The `options` passed to `TildaAction`, extended with:
  - `defaultOptions` (Array): Default and global options (default: help and version options).
  - `argv` (Array): A cutom array of arguments to parse (default: process arguments).
+ - `stdin` (Boolean): Whether to listen for stdin data or not (default: `false`).
 
 #### Return
 - **Tilda** The `Tilda` instance containing:
@@ -316,6 +319,7 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`babel-it`](https://github.com/IonicaBizau/babel-it#readme)—Babelify your code before `npm publish`.
  - [`blah`](https://github.com/IonicaBizau/blah)—A command line tool to optimize the repetitive actions.
  - [`bloggify-cli`](https://github.com/Bloggify/bloggify-cli#readme)—CLI for Bloggify.
+ - [`bloggify-tools`](https://github.com/Bloggify/bloggify-tools)—Interactive command line tool to help you win at Bloggify.
  - [`cli-confeti`](https://github.com/IonicaBizau/cli-confeti#readme)—Confeti in your terminal.
  - [`cli-confetti`](https://github.com/IonicaBizau/cli-confetti#readme)—Confetti in your terminal.
  - [`cli-emoji`](https://github.com/IonicaBizau/cli-emoji#readme)—Big emojis in your terminal.
@@ -333,6 +337,7 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`pull-from-source`](https://github.com/IonicaBizau/pull-from-source#readme)—Pulls the changes from the source repository in the forked one.
  - [`ship-release`](https://github.com/IonicaBizau/ship-release#readme)—Publish new versions on GitHub and npm with ease.
  - [`tester-init`](https://github.com/IonicaBizau/tester-init#readme)—Init tests for tester.
+ - [`tilda-cowsay`](https://github.com/Bloggify/tilda-cowsay#readme)—Example how to use tilda to build a cowsay app
  - [`tilda-init`](https://github.com/IonicaBizau/tilda-init#readme)—Init cli applications.
  - [`tithe`](https://github.com/IonicaBizau/tithe)—Organize and track the tithe payments.
  - [`web-term`](https://github.com/IonicaBizau/web-term)—A full screen terminal in your browser.
@@ -345,9 +350,7 @@ If you are using this library in one of your projects, add it in this list. :spa
 [paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW
 [donate-now]: http://i.imgur.com/6cMbHOC.png
 
-
 [license]: http://showalicense.com/?fullname=Ionic%C4%83%20Biz%C4%83u%20%3Cbizauionica%40gmail.com%3E%20(http%3A%2F%2Fionicabizau.net)&year=2015#license-mit
-
 [website]: http://ionicabizau.net
 [contributing]: /CONTRIBUTING.md
 [docs]: /DOCUMENTATION.md

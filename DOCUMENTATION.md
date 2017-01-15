@@ -91,6 +91,7 @@ Creates the parser instance.
 - **Object** `options`: The `options` passed to `TildaAction`, extended with:
  - `defaultOptions` (Array): Default and global options (default: help and version options).
  - `argv` (Array): A cutom array of arguments to parse (default: process arguments).
+ - `stdin` (Boolean): Whether to listen for stdin data or not (default: `false`).
 
 #### Return
 - **Tilda** The `Tilda` instance containing:
