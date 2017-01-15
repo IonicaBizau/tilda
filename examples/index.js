@@ -63,6 +63,8 @@ let p = new Tilda({
       , desc: "The text to display."
       , stdin: true
     }]
+}, {
+    stdin: true
 }).option([
     {
         opts: ["eye", "e"]
