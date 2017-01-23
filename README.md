@@ -325,6 +325,7 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`cli-emoji`](https://github.com/IonicaBizau/cli-emoji#readme)—Big emojis in your terminal.
  - [`cli-gh-cal`](https://github.com/IonicaBizau/cli-gh-cal)—GitHub like calendar graphs in command line.
  - [`cli-sunset`](https://github.com/IonicaBizau/cli-sunset)—A fancy command line tool for knowing the sunset time.
+ - [`exec-limiter-cli`](https://github.com/IonicaBizau/exec-limiter-cli#readme)—Run multiple shell commands in parallel, but with a limit.
  - [`fengine`](https://nuintun.github.io/fengine) (by nuintun)—A development tool for f2e
  - [`flight-tracker`](https://github.com/IonicaBizau/flight-tracker#readme)—A flight tracker in your command line.
  - [`git-stats`](https://github.com/IonicaBizau/git-stats)—Local git statistics including GitHub-like contributions calendars.
