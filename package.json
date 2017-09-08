@@ -1,6 +1,6 @@
 {
   "name": "tilda",
-  "version": "4.4.10",
+  "version": "4.4.11",
   "description": "Tiny module for building command line tools.",
   "main": "lib/index.js",
   "directories": {
@@ -79,6 +79,9 @@
     "resources/",
     "menu/",
     "cli.js",
-    "index.js"
+    "index.js",
+    "bloggify.js",
+    "bloggify.json",
+    "bloggify/"
   ]
 }
