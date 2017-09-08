@@ -6,6 +6,7 @@ You can see below the API reference of this module.
 The `TildaOption` class used for creating option objects.
 
 #### Params
+
 - **Object** `input`: An object containing the following fields:
  - `name` (String): The option name (optional).
  - `description` (String): The option description.
@@ -39,6 +40,7 @@ The `TildaAction` class used for creating action objects.
 This is extended `EventEmitter`.
 
 #### Params
+
 - **String|Object** `info`: The path to a containing the needed information or an object containing:
  - `description|desc` (String): The action description.
  - `name` (String): The action name.
@@ -72,6 +74,7 @@ This is extended `EventEmitter`.
 Converts the info input into json output.
 
 #### Params
+
 - **String|Object** `info`: The info object or path to a json file.
 
 #### Return
@@ -81,12 +84,14 @@ Converts the info input into json output.
 Adds one or more options to the action object.
 
 #### Params
+
 - **Array|Object** `input`: An array of option objects or an object passed to the `TildaOption` class.
 
 ### `Tilda(info, options)`
 Creates the parser instance.
 
 #### Params
+
 - **Object** `info`: The `info` object passed to `TildaAction`.
 - **Object** `options`: The `options` passed to `TildaAction`, extended with:
  - `defaultOptions` (Array): Default and global options (default: help and version options).
@@ -105,12 +110,14 @@ Creates the parser instance.
 Adds a global option for all the actions.
 
 #### Params
+
 - **Array|Object** `input`: The option object.
 
 ### `action(input, opts)`
 Adds a new action.
 
 #### Params
+
 - **Object** `input`: The info object passed to `TildaAction`.
 - **Array** `opts`: The action options.
 
@@ -118,6 +125,7 @@ Adds a new action.
 Exits the process.
 
 #### Params
+
 - **String|Object** `msg`: The stringified message or an object containing the error code.
 - **Number** `code`: The exit code (default: `0`).
 
@@ -136,18 +144,21 @@ Returns the version information.
 Displays the help output.
 
 #### Params
+
 - **TildaAction** `action`: The action you want to display help for.
 
 ### `main(cb)`
 Append a handler when the main action is used.
 
 #### Params
+
 - **Function** `cb`: The callback function.
 
 ### `convertTo(classConst, input, opts)`
 Converts an input into a class instance.
 
 #### Params
+
 - **Class** `classConst`: The class to convert to.
 - **Object|Array** `input`: The object info.
 - **Object** `opts`: The options object (optional).
