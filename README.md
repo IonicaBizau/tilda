@@ -367,12 +367,14 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`cli-gh-cal`](https://github.com/IonicaBizau/cli-gh-cal)—GitHub like calendar graphs in command line.
  - [`cli-sunset`](https://github.com/IonicaBizau/cli-sunset)—A fancy command line tool for knowing the sunset time.
  - [`exec-limiter-cli`](https://github.com/IonicaBizau/exec-limiter-cli#readme)—Run multiple shell commands in parallel, but with a limit.
+ - [`face-detectify`](https://github.com/IonicaBizau/face-detectify#readme)—Detect faces in images. Without native modules.
  - [`flight-tracker`](https://github.com/IonicaBizau/flight-tracker#readme)—A flight tracker in your command line.
  - [`git-stats`](https://github.com/IonicaBizau/git-stats)—Local git statistics including GitHub-like contributions calendars.
  - [`git-stats-html`](https://github.com/IonicaBizau/git-stats-html#readme)—Turn git-stats result into HTML output.
  - [`git-unsaved`](https://github.com/IonicaBizau/git-unsaved#readme)—Scan your projects directory for dirty git repositories.
  - [`gitlist`](https://github.com/SpaceG/gitlist.io#readme) (by lucasgatsas)—Gitlist OS
  - [`idy-cli`](https://github.com/IonicaBizau/idy-cli#readme)—CLI a for generating random string.
+ - [`img-ssim-cli`](https://github.com/IonicaBizau/img-ssim-cli#readme)—CLI Tool for comparing images using the SSIM algorithm.
  - [`machine-ip`](https://github.com/IonicaBizau/machine-ip#readme)—Update your public ip information in a git repository.
  - [`mastodon-create-account`](https://github.com/sandhawke/mastodon-create-account#readme) (by Sandro Hawke)—create a user account from cmd line or function call
  - [`mastodon-get-token`](https://github.com/sandhawke/mastodon-get-token#readme) (by Sandro Hawke)—Do the oauth dance to get a user's access token, knowing the password.
@@ -384,6 +386,7 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`packy`](https://github.com/IonicaBizau/packy#readme)—Set default fields in your package.json files.
  - [`pull-from-source`](https://github.com/IonicaBizau/pull-from-source#readme)—Pulls the changes from the source repository in the forked one.
  - [`ship-release`](https://github.com/IonicaBizau/ship-release#readme)—Publish new versions on GitHub and npm with ease.
+ - [`streetpianos-scraper`](https://github.com/IonicaBizau/streetpianos-scraper)—Scraper for http://streetpianos-scraper.com/.
  - [`tester-init`](https://github.com/IonicaBizau/tester-init#readme)—Init tests for tester.
  - [`tilda-cowsay`](https://github.com/Bloggify/tilda-cowsay#readme)—Example how to use tilda to build a cowsay app
  - [`tilda-init`](https://github.com/IonicaBizau/tilda-init#readme)—Init cli applications.
