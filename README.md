@@ -5,7 +5,9 @@
 
 # tilda
 
- [![Support me on Patreon][badge_patreon]][patreon] [![Buy me a book][badge_amazon]][amazon] [![PayPal][badge_paypal_donate]][paypal-donations] [![Ask me anything](https://img.shields.io/badge/ask%20me-anything-1abc9c.svg)](https://github.com/IonicaBizau/ama) [![Version](https://img.shields.io/npm/v/tilda.svg)](https://www.npmjs.com/package/tilda) [![Downloads](https://img.shields.io/npm/dt/tilda.svg)](https://www.npmjs.com/package/tilda)
+ [![Support me on Patreon][badge_patreon]][patreon] [![Buy me a book][badge_amazon]][amazon] [![PayPal][badge_paypal_donate]][paypal-donations] [![Ask me anything](https://img.shields.io/badge/ask%20me-anything-1abc9c.svg)](https://github.com/IonicaBizau/ama) [![Version](https://img.shields.io/npm/v/tilda.svg)](https://www.npmjs.com/package/tilda) [![Downloads](https://img.shields.io/npm/dt/tilda.svg)](https://www.npmjs.com/package/tilda) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
+
+<a href="https://www.buymeacoffee.com/H96WwChMy" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Buy Me A Coffee"></a>
 
 > Tiny module for building command line tools.
 
@@ -334,10 +336,11 @@ Have an idea? Found a bug? See [how to contribute][contributing].
 
 ## :sparkling_heart: Support my projects
 
-I open-source almost everything I can, and I try to reply everyone needing help using these projects. Obviously,
+I open-source almost everything I can, and I try to reply to everyone needing help using these projects. Obviously,
 this takes time. You can integrate and use these projects in your applications *for free*! You can even change the source code and redistribute (even resell it).
 
 However, if you get some profit from this or just want to encourage me to continue creating stuff, there are few ways you can do it:
+
 
  - Starring and sharing the projects you like :rocket:
  - [![Buy me a book][badge_amazon]][amazon]—I love books! I will remember you after years if you buy me one. :grin: :book:
@@ -346,6 +349,7 @@ However, if you get some profit from this or just want to encourage me to contin
  - **Bitcoin**—You can send me bitcoins at this address (or scanning the code below): `1P9BRsmazNQcuyTxEqveUsnf5CERdq35V6`
 
     ![](https://i.imgur.com/z6OQI95.png)
+
 
 Thanks! :heart:
 
@@ -367,12 +371,14 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`cli-gh-cal`](https://github.com/IonicaBizau/cli-gh-cal)—GitHub like calendar graphs in command line.
  - [`cli-sunset`](https://github.com/IonicaBizau/cli-sunset)—A fancy command line tool for knowing the sunset time.
  - [`exec-limiter-cli`](https://github.com/IonicaBizau/exec-limiter-cli#readme)—Run multiple shell commands in parallel, but with a limit.
- - [`face-detectify`](https://github.com/IonicaBizau/face-detectify#readme)—Detect faces in images. Without native modules.
+ - [`face-detectify`](https://github.com/IonicaBizau/face-detectify#readme)—Detect faces in images. Without native modules. It uses tracking.js.
  - [`flight-tracker`](https://github.com/IonicaBizau/flight-tracker#readme)—A flight tracker in your command line.
+ - [`git-change-author`](https://github.com/IonicaBizau/git-change-author#readme)—Set a specific author for all the commits of a git repository.
  - [`git-stats`](https://github.com/IonicaBizau/git-stats)—Local git statistics including GitHub-like contributions calendars.
  - [`git-stats-html`](https://github.com/IonicaBizau/git-stats-html#readme)—Turn git-stats result into HTML output.
  - [`git-unsaved`](https://github.com/IonicaBizau/git-unsaved#readme)—Scan your projects directory for dirty git repositories.
  - [`gitlist`](https://github.com/SpaceG/gitlist.io#readme) (by lucasgatsas)—Gitlist OS
+ - [`google-font-downloader`](https://github.com/Bloggify/google-font-downloader#readme) (by Bloggify)—Download Google fonts by providing the url
  - [`idy-cli`](https://github.com/IonicaBizau/idy-cli#readme)—CLI a for generating random string.
  - [`img-ssim-cli`](https://github.com/IonicaBizau/img-ssim-cli#readme)—CLI Tool for comparing images using the SSIM algorithm.
  - [`machine-ip`](https://github.com/IonicaBizau/machine-ip#readme)—Update your public ip information in a git repository.
@@ -385,6 +391,7 @@ If you are using this library in one of your projects, add it in this list. :spa
  - [`obj2env-cli`](https://github.com/Bloggify/obj2env-cli#readme) (by Bloggify)—Create .env files in your terminal.
  - [`packy`](https://github.com/IonicaBizau/packy#readme)—Set default fields in your package.json files.
  - [`pull-from-source`](https://github.com/IonicaBizau/pull-from-source#readme)—Pulls the changes from the source repository in the forked one.
+ - [`scrape-it-cli`](https://github.com/IonicaBizau/scrape-it-cli#readme)—CLI for scrape-it. A Node.js scraper for humans. :rocket:
  - [`ship-release`](https://github.com/IonicaBizau/ship-release#readme)—Publish new versions on GitHub and npm with ease.
  - [`streetpianos-scraper`](https://github.com/IonicaBizau/streetpianos-scraper)—Scraper for http://streetpianos-scraper.com/.
  - [`tester-init`](https://github.com/IonicaBizau/tester-init#readme)—Init tests for tester.
@@ -398,14 +405,15 @@ If you are using this library in one of your projects, add it in this list. :spa
 
 [MIT][license] © [Ionică Bizău][website]
 
-[badge_patreon]: http://ionicabizau.github.io/badges/patreon.svg
-[badge_amazon]: http://ionicabizau.github.io/badges/amazon.svg
-[badge_paypal]: http://ionicabizau.github.io/badges/paypal.svg
-[badge_paypal_donate]: http://ionicabizau.github.io/badges/paypal_donate.svg
+
+[badge_patreon]: https://ionicabizau.github.io/badges/patreon.svg
+[badge_amazon]: https://ionicabizau.github.io/badges/amazon.svg
+[badge_paypal]: https://ionicabizau.github.io/badges/paypal.svg
+[badge_paypal_donate]: https://ionicabizau.github.io/badges/paypal_donate.svg
+
 [patreon]: https://www.patreon.com/ionicabizau
 [amazon]: http://amzn.eu/hRo9sIZ
 [paypal-donations]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=RVXDDLKKLQRJW
-[donate-now]: http://i.imgur.com/6cMbHOC.png
 
 [license]: http://showalicense.com/?fullname=Ionic%C4%83%20Biz%C4%83u%20%3Cbizauionica%40gmail.com%3E%20(https%3A%2F%2Fionicabizau.net)&year=2015#license-mit
 [website]: https://ionicabizau.net
