@@ -5,9 +5,7 @@
 
 # tilda
 
- [![Support me on Patreon][badge_patreon]][patreon] [![Buy me a book][badge_amazon]][amazon] [![PayPal][badge_paypal_donate]][paypal-donations] [![Ask me anything](https://img.shields.io/badge/ask%20me-anything-1abc9c.svg)](https://github.com/IonicaBizau/ama) [![Version](https://img.shields.io/npm/v/tilda.svg)](https://www.npmjs.com/package/tilda) [![Downloads](https://img.shields.io/npm/dt/tilda.svg)](https://www.npmjs.com/package/tilda) [![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnnyb?utm_source=github&utm_medium=button&utm_term=johnnyb&utm_campaign=github)
-
-<a href="https://www.buymeacoffee.com/H96WwChMy" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/yellow_img.png" alt="Buy Me A Coffee"></a>
+ [![Support me on Patreon][badge_patreon]][patreon] [![Buy me a book][badge_amazon]][amazon] [![PayPal][badge_paypal_donate]][paypal-donations] [![Ask me anything](https://img.shields.io/badge/ask%20me-anything-1abc9c.svg)](https://github.com/IonicaBizau/ama) [![Version](https://img.shields.io/npm/v/tilda.svg)](https://www.npmjs.com/package/tilda) [![Downloads](https://img.shields.io/npm/dt/tilda.svg)](https://www.npmjs.com/package/tilda)
 
 > Tiny module for building command line tools.
 
@@ -150,6 +148,8 @@ let p = new Tilda({
 
 
 
+
+
 ## :question: Get Help
 
 There are few ways to get help:
@@ -158,6 +158,7 @@ There are few ways to get help:
  2. For bug reports and feature requests, open issues. :bug:
 
  3. For direct and quick help, you can [use Codementor](https://www.codementor.io/johnnyb). :rocket:
+
 
 
 
@@ -354,52 +355,6 @@ However, if you get some profit from this or just want to encourage me to contin
 Thanks! :heart:
 
 
-## :dizzy: Where is this library used?
-If you are using this library in one of your projects, add it in this list. :sparkles:
-
-
- - [`3abn`](https://github.com/IonicaBizau/3abn#readme)—A 3ABN radio client in the terminal.
- - [`ajs`](https://github.com/IonicaBizau/ajs#readme)—Asynchronous templating in Node.js
- - [`babel-it`](https://github.com/IonicaBizau/babel-it#readme)—Babelify your code before `npm publish`.
- - [`blah`](https://github.com/IonicaBizau/blah)—A command line tool to optimize the repetitive actions.
- - [`bloggify`](https://github.com/Bloggify/Bloggify) (by Bloggify)—We make publishing easy.
- - [`bloggify-cli`](https://github.com/Bloggify/Bloggify) (by Bloggify)—We make publishing easy.
- - [`bloggify-tools`](https://github.com/Bloggify/bloggify-tools)—Interactive command line tool to help you win at Bloggify.
- - [`cli-confeti`](https://github.com/IonicaBizau/cli-confeti#readme)—Confeti in your terminal.
- - [`cli-confetti`](https://github.com/IonicaBizau/cli-confetti#readme)—Confetti in your terminal.
- - [`cli-emoji`](https://github.com/IonicaBizau/cli-emoji#readme)—Big emojis in your terminal.
- - [`cli-gh-cal`](https://github.com/IonicaBizau/cli-gh-cal)—GitHub like calendar graphs in command line.
- - [`cli-sunset`](https://github.com/IonicaBizau/cli-sunset)—A fancy command line tool for knowing the sunset time.
- - [`exec-limiter-cli`](https://github.com/IonicaBizau/exec-limiter-cli#readme)—Run multiple shell commands in parallel, but with a limit.
- - [`face-detectify`](https://github.com/IonicaBizau/face-detectify#readme)—Detect faces in images. Without native modules. It uses tracking.js.
- - [`flight-tracker`](https://github.com/IonicaBizau/flight-tracker#readme)—A flight tracker in your command line.
- - [`git-change-author`](https://github.com/IonicaBizau/git-change-author#readme)—Set a specific author for all the commits of a git repository.
- - [`git-stats`](https://github.com/IonicaBizau/git-stats)—Local git statistics including GitHub-like contributions calendars.
- - [`git-stats-html`](https://github.com/IonicaBizau/git-stats-html#readme)—Turn git-stats result into HTML output.
- - [`git-unsaved`](https://github.com/IonicaBizau/git-unsaved#readme)—Scan your projects directory for dirty git repositories.
- - [`gitlist`](https://github.com/SpaceG/gitlist.io#readme) (by lucasgatsas)—Gitlist OS
- - [`google-font-downloader`](https://github.com/Bloggify/google-font-downloader#readme) (by Bloggify)—Download Google fonts by providing the url
- - [`idy-cli`](https://github.com/IonicaBizau/idy-cli#readme)—CLI a for generating random string.
- - [`img-ssim-cli`](https://github.com/IonicaBizau/img-ssim-cli#readme)—CLI Tool for comparing images using the SSIM algorithm.
- - [`machine-ip`](https://github.com/IonicaBizau/machine-ip#readme)—Update your public ip information in a git repository.
- - [`mastodon-create-account`](https://github.com/sandhawke/mastodon-create-account#readme) (by Sandro Hawke)—create a user account from cmd line or function call
- - [`mastodon-get-token`](https://github.com/sandhawke/mastodon-get-token#readme) (by Sandro Hawke)—Do the oauth dance to get a user's access token, knowing the password.
- - [`mastodon-register-app`](https://github.com/sandhawke/mastodon-register-app#readme) (by Sandro Hawke)—Do the little oauth dance to register an app
- - [`mdy`](https://github.com/IonicaBizau/mdy#readme)—View markdown files in the command line with ANSI styled images.
- - [`np-init-cli`](https://github.com/IonicaBizau/np-init-cli#readme)—CLI for starting a new npm package.
- - [`nuvi`](https://github.com/IonicaBizau/nuvi#readme)—Happy birthday, Nuvi!
- - [`obj2env-cli`](https://github.com/Bloggify/obj2env-cli#readme) (by Bloggify)—Create .env files in your terminal.
- - [`packy`](https://github.com/IonicaBizau/packy#readme)—Set default fields in your package.json files.
- - [`pull-from-source`](https://github.com/IonicaBizau/pull-from-source#readme)—Pulls the changes from the source repository in the forked one.
- - [`scrape-it-cli`](https://github.com/IonicaBizau/scrape-it-cli#readme)—CLI for scrape-it. A Node.js scraper for humans. :rocket:
- - [`ship-release`](https://github.com/IonicaBizau/ship-release#readme)—Publish new versions on GitHub and npm with ease.
- - [`streetpianos-scraper`](https://github.com/IonicaBizau/streetpianos-scraper)—Scraper for http://streetpianos-scraper.com/.
- - [`tester-init`](https://github.com/IonicaBizau/tester-init#readme)—Init tests for tester.
- - [`tilda-cowsay`](https://github.com/Bloggify/tilda-cowsay#readme)—Example how to use tilda to build a cowsay app
- - [`tilda-init`](https://github.com/IonicaBizau/tilda-init#readme)—Init cli applications.
- - [`tithe`](https://github.com/IonicaBizau/tithe)—Organize and track the tithe payments.
- - [`vivah`](https://github.com/IonicaBizau/vivah#readme)—Happy birthday, Linda!
- - [`web-term`](https://github.com/IonicaBizau/web-term)—A full screen terminal in your browser.
 
 ## :scroll: License
 
